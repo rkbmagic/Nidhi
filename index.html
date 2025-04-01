@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NIDHIYATHARTH INFRAPROJECTS</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of viewport */
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the section */
+    transform: translate(-50%, -50%); /* Centers the video */
+}
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonial-carousel .carousel-item {
+            padding: 2rem;
+            text-align: center;
+        }
+        .testimonial-carousel .carousel-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d6efd;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        /* Advanced Footer */
+        .footer-advanced {
+            background: #0d6efd;
+            color: white;
+            padding: 2rem 0;
+        }
+        .footer-advanced a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-advanced a:hover {
+            text-decoration: underline;
+        }
+        .footer-advanced .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        .whatsapp-float a {
+            display: block;
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        .whatsapp-float a:hover {
+            background: #128C7E;
+        }
+        
+           .service-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border: none;
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .service-icon {
+            font-size: 2rem;
+            color: #007bff;
+        }
+        .service-card h4 {
+            color: #333;
+            font-weight: 600;
+        }
+        
+         .btn-gradient {
+        background: linear-gradient(45deg, #007bff, #00d4ff);
+        color: #fff;
+        padding: 12px 24px;
+        font-size: 18px;
+        border: none;
+        transition: all 0.3s ease-in-out;
+    }
+    .btn-gradient:hover {
+}
+  .testimonial-box {
+            max-width: 600px;
+            margin: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial-box:hover {
+            transform: scale(1.05);
+        }
+
+        .carousel-indicators button {
+            background-color: #00768e;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #00768e;
+            border-radius: 50%;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color:white;color:black">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index"><img src="https://teleber.tech/t/druv/dr/logo.jpeg" alt="Political Rank Logo" class="logo" style="width: 50px;"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="q_abt">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="q_privacy">Privacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shipping">Shipping</a></li>
+                    <li class="nav-item"><a class="nav-link" href="payment">Payment</a></li>
+                      <li class="nav-item"><a class="nav-link" href="refunds">Refund</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><br><br>
+    <!--     <section class="hero">
+        <video autoplay muted loop>
+            <source src="dr/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+     <section class="hero">
+        
+     
+         <video autoplay muted loop>
+            <source src="dr/wwe1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section> -->
+    <section style="background-color:white">
+<div class="hero" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <video autoplay muted webkit-playsinline playsinline  loop style="width: auto; height: 90vh; max-width: 100%; margin: auto; border-radius: 10px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);">
+        <source src="https://nidhiinfra.teleber.tech/dr/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="hero" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <video autoplay muted webkit-playsinline playsinline  loop style="width: auto; height: 90vh; max-width: 100%; margin: auto; border-radius: 10px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);">
+        <source src="https://nidhiinfra.teleber.tech/dr/wwe1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+</section>
+
+    <!-- About Section qqq.mp4-->
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light text-center">
+        <div class="container">
+                      <h2 class="fw-bold" style="display: inline-block; position: relative;">
+   Our Products
+    <span style="
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, #00768e, rgba(0, 118, 142, 0));
+        ">
+    </span>
+</h2>
+            <div class="container mt-4">
+<div class="row g-4">
+ 
+<div class="col-12 col-lg-6">
+    <div class="card service-card p-4 shadow rounded-4 position-relative text-white" 
+         style="background: url('https://nidhiinfra.teleber.tech//dr/1.jpg') no-repeat center center/cover;" onclick="window.location.href='product2'">
+        <div class="overlay" 
+             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                    background: rgba(0, 0, 0, 0.4); border-radius: inherit;">
+        </div>
+        <div class="position-relative" style="z-index: 1;">
+            <h4 style="color:white" class="mt-3">Metals</h4>
+            <p>Represents precision and craftsmanship in metal products.</p>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+<div class="col-12 col-lg-6">
+    <div class="card service-card p-4 shadow rounded-4 position-relative text-white" 
+         style="background: url('https://nidhiinfra.teleber.tech//dr/2.jpg') no-repeat center center/cover;" onclick="window.location.href='product3'">
+        <div class="overlay" 
+               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                    background: rgba(0, 0, 0, 0.4); border-radius: inherit;">
+        </div>
+        <div class="position-relative" style="z-index: 1;">
+            <h4 style="color:white" class="mt-3">Stones</h4>
+            <p>Symbolizes timeless strength and elegance in stone products.</p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    
+    
+    
+    
+    
+    </div>
+</div>
+<div></div>
+    </section>
+    <section id="about" class="py-5 text-center" style="background-color:white">
+        <div class="container">
+                                 <h2 class="fw-bold" style="display: inline-block; position: relative;">
+ Why Us
+    <span style="
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, #00768e, rgba(0, 118, 142, 0));
+        ">
+    </span>
+</h2>
+
+
+    <div class="container">
+     
+        <p class="lead text-muted">
+            We are a leading <strong>exporter and wholesaler</strong> of <strong>Natural Stones and Metals</strong>, including 
+            <strong>Stainless Steels, Granite, and Marble</strong>. Our products are sourced from <strong>reliable vendors</strong> and meet 
+            international quality standards. With an advanced warehousing system, we ensure <strong>prompt delivery</strong> and well-organized 
+            inventory management.
+        </p>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-10 col-lg-8">
+        <div class="card shadow-lg border-0 rounded-4 p-3 bg-light">
+            <div class="card-body p-4">
+                <h4 class="fw-bold text-dark mb-3 d-flex align-items-center">
+                    <i class="bi bi-stars text-warning fs-3 me-2"></i> What Sets Us Apart?
+                </h4>
+                <ul class="list-group list-group-flush text-start">
+                    <li class="list-group-item border-0 d-flex align-items-center">
+                        <i class="bi bi-gem text-primary fs-4 me-3"></i>
+                        <div>
+                            <strong>Premium Quality Products</strong>
+                            <span class="badge bg-success ms-2">Certified</span> <br>
+                            <small class="text-muted">Internationally certified materials.</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center">
+                        <i class="bi bi-people-fill text-secondary fs-4 me-3"></i>
+                        <div>
+                            <strong>Experienced Professionals & R&D Team</strong> <br>
+                            <small class="text-muted">Industry-leading experts.</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center">
+                        <i class="bi bi-box-seam text-success fs-4 me-3"></i>
+                        <div>
+                            <strong>Large Production Capacity</strong> <br>
+                            <small class="text-muted">Capable of fulfilling bulk orders efficiently.</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center">
+                        <i class="bi bi-heart-fill text-danger fs-4 me-3"></i>
+                        <div>
+                            <strong>Customer-Centric Approach</strong> <br>
+                            <small class="text-muted">Dedicated support & timely deliveries.</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center">
+                        <i class="bi bi-building text-info fs-4 me-3"></i>
+                        <div>
+                            <strong>State-of-the-Art Infrastructure</strong> <br>
+                            <small class="text-muted">Modern facilities for optimal production.</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center">
+                        <i class="bi bi-cash-stack text-warning fs-4 me-3"></i>
+                        <div>
+                            <strong>Competitive Pricing</strong>
+                            <span class="badge bg-primary ms-2">Best Value</span> <br>
+                            <small class="text-muted">Cost-effective solutions without quality compromise.</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center">
+                        <i class="bi bi-shield-check text-success fs-4 me-3"></i>
+                        <div>
+                            <strong>Ethical Business Practices</strong> <br>
+                            <small class="text-muted">Integrity and transparency in every deal.</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#contact" class="btn btn-gradient px-4 rounded-pill shadow-lg">
+                Get in Touch <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+
+    
+    
+    </div>
+    </section>
+
+<!-- Testimonials Section -->
+
+<section id="testimonials" class="py-5 text-center bg-light">
+    <div class="container">
+        <h2 class="fw-bold position-relative d-inline-block">
+            What Our Clients Say
+            <span style="
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(to right, #00768e, rgba(0, 118, 142, 0));
+                ">
+            </span>
+        </h2>
+        <br><br>
+
+        <div id="testimonialCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel">
+            <!-- Pagination Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-box p-4 rounded shadow-sm bg-white">
+                        <img src="1.jpeg" alt="Client 1" class="rounded-circle mb-3 border border-3 border-primary">
+                        <p class="fst-italic">"When it comes to quality, this sets the standard. I trust their product implicitly and would recommend them to anyone."</p>
+                        <h5 class="fw-bold text-primary">Rashmi Chawla</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-box p-4 rounded shadow-sm bg-white">
+                        <img src="2.jpeg" alt="Client 2" class="rounded-circle mb-3 border border-3 border-primary">
+                        <p class="fst-italic">"As a budget-conscious consumer, I’m thrilled with the affordability of This company’s offerings. I get exceptional value for every rupee spent."</p>
+                        <h5 class="fw-bold text-primary">Abdul Razaq</h5>
+                    </div>
+                </div>
+
+
+                <!---- <div class="carousel-item">
+                    <div class="testimonial-box p-4 rounded shadow-sm bg-white">
+                        <img src="3.jpeg" alt="Client 3" class="rounded-circle mb-3 border border-3 border-primary">
+                        <p class="fst-italic">"I appreciate that this company provides such high-quality products at competitive prices. It’s a great value for the quality you get."</p>
+                        <h5 class="fw-bold text-primary">Shourya Dutt</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-box p-4 rounded shadow-sm bg-white">
+                        <img src="4.jpeg" alt="Client 4" class="rounded-circle mb-3 border border-3 border-primary">
+                        <p class="fst-italic">"Reliability is key for my business, and this company has consistently delivered on time and with exceptional quality. They’ve become an invaluable partner."</p>
+                        <h5 class="fw-bold text-primary">Sonam Tripath</h5>
+                    </div>
+                </div>-->
+
+               
+            </div>
+
+            <!-- Previous and Next Buttons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+ 
+</section>
+
+<section id="contact" class="py-5 text-black text-center" style="background-color: white;">
+    <div class="container">
+        <h2 class="fw-bold position-relative d-inline-block">
+            Contact Us
+            <span style="
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(to right, #00768e, rgba(0, 118, 142, 0));
+            ">
+            </span>
+        </h2>
+        <p class="lead mt-3">Get in touch to discuss your campaign needs.</p>
+
+        <div class="card shadow-lg p-4 border-0 mx-auto mt-4" style="max-width: 600px;">
+            <h4 class="fw-bold text-primary">Mr. Madhusudan Dharmpal Singh</h4>
+            <p><i class="fas fa-map-marker-alt"></i> 2ND FLOOR, D-202, Kailash Darshan -2 CHS.LTD., Alkapuri, Nalasopara, Palghar, Maharashtra, 401209</p>
+            <p><b>GST IN 27AAPFN4324H1Z3</b></p>
+            <p><i class="fas fa-envelope"></i> 
+                <a href="mailto:mad93591@gmail.com" class="text-decoration-none">mad93591@gmail.com</a>,
+                <a href="mailto:info@nidhisteel.in" class="text-decoration-none">info@nidhiinfra.com</a>
+            </p>
+        </div>
+
+        <h3 class="mt-5">Or send a Quick WhatsApp Message</h3>
+        <form class="mt-4" onsubmit="sendToWhatsApp(event)" style="max-width: 600px; margin: auto;">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" id="name" class="form-control shadow-sm" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="email" id="email" class="form-control shadow-sm" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <textarea id="message" class="form-control shadow-sm" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg fw-bold px-4">
+                <i class="fab fa-whatsapp"></i> Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+<script>
+    function sendToWhatsApp(event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        var phoneNumber = "918308008972"; 
+
+        var whatsappMessage = `Hello, my name is ${name}%0AEmail: ${email}%0A${message}`;
+        var whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+        
+        window.open(whatsappURL, "_blank");
+    }
+</script>
+
+<!-- Add FontAwesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+ <footer class="footer-advanced" style="background-color:black; padding: 20px 0; position: relative;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://teleber.tech/t/druv/dr/logo.jpeg" style="max-width: 50%;margin-bottom:20px;border-radius:25px; height: auto; display: block;">
+            </div><br><br>
+            <div class="col-md-4">
+                <h5 style="color: white;">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="q_abt" style="color: #696969; text-decoration: none;">About Us</a></li>
+                    <li><a href="q_privacy" style="color: #696969; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="shipping" style="color: #696969; text-decoration: none;">International Shipping Policy</a></li>
+                    <li><a href="payment" style="color: #696969; text-decoration: none;">Payment and Shipping Terms</a></li>
+                     <li><a href="terms" style="color: #696969; text-decoration: none;">Terms & Conditions</a></li>
+                    <li><a href="refunds" style="color: #696969; text-decoration: none;">Refund and Safety Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 style="color: white;">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61567008914503" style="color: #696969; margin-right: 10px;"><i class="fab fa-facebook"></i></a>
+            <!---        <a href="#" style="color: #696969; margin-right: 10px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: #696969; margin-right: 10px;"><i class="fab fa-instagram"></i></a>--->
+                    <a href="https://www.linkedin.com/in/madhusudan-singh-7939972ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="color: #696969;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p style="color: white;">&copy; NIDHIYATHARTH INFRAPROJECTS LLP 2025 | All Rights Reserved.<br><small style="color: #696969;">Powered by Teleber Technologies</small></p>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/918308008972" target="_blank" style="position: fixed; bottom: 10px; right: 20px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); z-index: 1000;">
+        <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+    </a>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+
+    <!-- Back to Top Button 
+    <button id="back-to-top" class="btn btn-primary btn-lg"><i class="fas fa-arrow-up"></i></button>-->
+
+   
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Sticky Navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to Top Button
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', () => {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
