@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metals</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+        }
+        .boxi {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        .product-image {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff5722;
+        }
+        .btn-primary {
+            background-color: #ff5722;
+            border: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+        .list-group-item {
+            font-size: 1.1rem;
+        }
+        /* Carousel Buttons */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px; /* Adjust width as needed */
+            height: 50px; /* Adjust height as needed */
+      /* Make buttons circular */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust vertical alignment */
+            opacity: 0.7; /* Semi-transparent by default */
+            transition: opacity 0.3s;
+        }
+        .carousel-control-prev {
+            left: -25px; /* Position to the left of the image */
+        }
+        .carousel-control-next {
+            right: -25px; /* Position to the right of the image */
+        }
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1; /* Fully visible on hover */
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%); /* Make icons white */
+        }
+        /* Fullscreen Modal */
+        .modal-fullscreen .modal-dialog {
+            max-width: 100%;
+            margin: 0;
+        }
+        .modal-fullscreen .modal-content {
+            height: 100vh;
+            border-radius: 0;
+        }
+        .modal-fullscreen img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg  fixed-top" style="background-color:white;color:black">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index"><img src="https://teleber.tech/t/druv/dr/logo.jpeg" alt="Political Rank Logo" class="logo" style="width: 50px;"> Metals</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="q_abt">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="q_privacy">Privacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shipping">Shipping</a></li>
+                    <li class="nav-item"><a class="nav-link" href="payment">Payment</a></li>
+                      <li class="nav-item"><a class="nav-link" href="refunds">Refund</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="boxi mt-5">
+    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+
+<div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center position-relative">
+                        <!-- Previous Button -->
+                        <button class="carousel-control-prev position-absolute start-0" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <!-- Product Image -->
+                        <img src="https://teleber.tech/en2/DRUV/1.jpeg" alt="TMT bar" class="product-image w-75" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openFullscreen(this.src)">
+                        <!-- Next Button -->
+                        <button class="carousel-control-next position-absolute end-0" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-md-6"><br><br>
+                        <h1 class="fw-bold">TMT bar</h1>
+                        <p class="text-muted">A robust and stylish Thickness 12mm -32mm
+ material perfect for modern construction.</p>
+                        <p>Price Range: <br><span class="price">₹60/kg - ₹90/kg</span></p>
+                   
+                      <button class="btn btn-primary btn-lg w-100" onclick="window.location.href='https://nidhiinfra.teleber.tech/checkout?id=2'">Place order</button>
+
+                        <h5 class="mt-4">Product Details</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">✔ Extreme durability</li>
+                            <li class="list-group-item">✔ Natural stone elegance</li>
+                            <li class="list-group-item">✔ Resistant to scratches and heat</li>
+                            <li class="list-group-item">✔ High durability</li>
+                            <li class="list-group-item">✔ Luxurious and elegant</li>
+                            <li class="list-group-item">✔ Smooth finish</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                    <div class="carousel-item ">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center position-relative">
+                        <!-- Previous Button -->
+                        <button class="carousel-control-prev position-absolute start-0" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <!-- Product Image -->
+                        <img src="https://teleber.tech/en2/DRUV/2.jpeg" alt="Stainless Steel Checked " class="product-image w-75" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openFullscreen(this.src)">
+                        <!-- Next Button -->
+                        <button class="carousel-control-next position-absolute end-0" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-md-6"><br><br>
+                        <h1 class="fw-bold">Stainless Steel Checked </h1>
+                        <p class="text-muted">A robust and stylish  material perfect for modern construction.</p>
+                        <p>Price Range: <br><span class="price">₹200/kg-₹500/kg</span></p>
+                   
+                      <button class="btn btn-primary btn-lg w-100" onclick="window.location.href='https://nidhiinfra.teleber.tech/checkout?id=3'">Place order</button>
+
+                        <h5 class="mt-4">Product Details</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">✔ Extreme durability</li>
+                            <li class="list-group-item">✔ Natural stone elegance</li>
+                            <li class="list-group-item">✔ Resistant to scratches and heat</li>
+                            <li class="list-group-item">✔ High durability</li>
+                            <li class="list-group-item">✔ Luxurious and elegant</li>
+                            <li class="list-group-item">✔ Smooth finish</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                    <div class="carousel-item ">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center position-relative">
+                        <!-- Previous Button -->
+                        <button class="carousel-control-prev position-absolute start-0" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <!-- Product Image -->
+                        <img src="https://teleber.tech/en2/DRUV/3.jpeg" alt="Stainless Steel Pipes" class="product-image w-75" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openFullscreen(this.src)">
+                        <!-- Next Button -->
+                        <button class="carousel-control-next position-absolute end-0" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-md-6"><br><br>
+                        <h1 class="fw-bold">Stainless Steel Pipes</h1>
+                        <p class="text-muted">A robust and stylish  material perfect for modern construction.</p>
+                        <p>Price Range: <br><span class="price">₹300/kg-₹500/kg</span></p>
+                   
+                      <button class="btn btn-primary btn-lg w-100" onclick="window.location.href='https://nidhiinfra.teleber.tech/checkout?id=4'">Place order</button>
+
+                        <h5 class="mt-4">Product Details</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">✔ Extreme durability</li>
+                            <li class="list-group-item">✔ Natural stone elegance</li>
+                            <li class="list-group-item">✔ Resistant to scratches and heat</li>
+                            <li class="list-group-item">✔ High durability</li>
+                            <li class="list-group-item">✔ Luxurious and elegant</li>
+                            <li class="list-group-item">✔ Smooth finish</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                    <div class="carousel-item ">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center position-relative">
+                        <!-- Previous Button -->
+                        <button class="carousel-control-prev position-absolute start-0" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <!-- Product Image -->
+                        <img src="https://teleber.tech/en2/DRUV/4.jpeg" alt="MS Steel " class="product-image w-75" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openFullscreen(this.src)">
+                        <!-- Next Button -->
+                        <button class="carousel-control-next position-absolute end-0" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-md-6"><br><br>
+                        <h1 class="fw-bold">MS Steel </h1>
+                        <p class="text-muted">A robust and stylish  material perfect for modern construction.</p>
+                        <p>Price Range: <br><span class="price">₹65/kg-₹120/kg</span></p>
+                   
+                      <button class="btn btn-primary btn-lg w-100" onclick="window.location.href='https://nidhiinfra.teleber.tech/checkout?id=5'">Place order</button>
+
+                        <h5 class="mt-4">Product Details</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">✔ Extreme durability</li>
+                            <li class="list-group-item">✔ Natural stone elegance</li>
+                            <li class="list-group-item">✔ Resistant to scratches and heat</li>
+                            <li class="list-group-item">✔ High durability</li>
+                            <li class="list-group-item">✔ Luxurious and elegant</li>
+                            <li class="list-group-item">✔ Smooth finish</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                    <div class="carousel-item ">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center position-relative">
+                        <!-- Previous Button -->
+                        <button class="carousel-control-prev position-absolute start-0" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <!-- Product Image -->
+                        <img src="https://teleber.tech/en2/DRUV/5.jpeg" alt="Tig/Mig/Copper Welding Wire" class="product-image w-75" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="openFullscreen(this.src)">
+                        <!-- Next Button -->
+                        <button class="carousel-control-next position-absolute end-0" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-md-6"><br><br>
+                        <h1 class="fw-bold">Tig/Mig/Copper Welding Wire</h1>
+                        <p class="text-muted">A robust and stylish  material perfect for modern construction.</p>
+                        <p>Price Range: <br><span class="price">₹400/kg-₹1600/kg</span></p>
+                   
+                      <button class="btn btn-primary btn-lg w-100" onclick="window.location.href='https://nidhiinfra.teleber.tech/checkout?id=6'">Place order</button>
+
+                        <h5 class="mt-4">Product Details</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">✔ Extreme durability</li>
+                            <li class="list-group-item">✔ Natural stone elegance</li>
+                            <li class="list-group-item">✔ Resistant to scratches and heat</li>
+                            <li class="list-group-item">✔ High durability</li>
+                            <li class="list-group-item">✔ Luxurious and elegant</li>
+                            <li class="list-group-item">✔ Smooth finish</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+        
+        
+        </div>
+    </div>
+</div>
+
+<!-- Fullscreen Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="fullscreenImage" src="" alt="Fullscreen Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-advanced" style="background-color:black; padding: 20px 0; position: relative;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://teleber.tech/t/druv/dr/logo.jpeg" style="max-width: 50%;margin-bottom:20px;border-radius:25px; height: auto; display: block;">
+            </div><br><br>
+            <div class="col-md-4">
+                <h5 style="color: white;">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="q_abt" style="color: #696969; text-decoration: none;">About Us</a></li>
+                    <li><a href="q_privacy" style="color: #696969; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="shipping" style="color: #696969; text-decoration: none;">International Shipping Policy</a></li>
+                    <li><a href="payment" style="color: #696969; text-decoration: none;">Payment and Shipping Terms</a></li>
+                     <li><a href="terms" style="color: #696969; text-decoration: none;">Terms & Conditions</a></li>
+                    <li><a href="refunds" style="color: #696969; text-decoration: none;">Refund and Safety Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 style="color: white;">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61567008914503" style="color: #696969; margin-right: 10px;"><i class="fab fa-facebook"></i></a>
+            <!---        <a href="#" style="color: #696969; margin-right: 10px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: #696969; margin-right: 10px;"><i class="fab fa-instagram"></i></a>--->
+                    <a href="https://www.linkedin.com/in/madhusudan-singh-7939972ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="color: #696969;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p style="color: white;">&copy; NIDHIYATHARTH INFRAPROJECTS LLP 2025 | All Rights Reserved.<br><small style="color: #696969;">Powered by Teleber Technologies</small></p>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/918308008972" target="_blank" style="position: fixed; bottom: 10px; right: 20px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); z-index: 1000;">
+        <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+    </a>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function openFullscreen(imageSrc) {
+        document.getElementById('fullscreenImage').src = imageSrc;
+    }
+</script>
+
+</body>
+</html>
